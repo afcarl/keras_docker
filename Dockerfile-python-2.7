@@ -1,0 +1,10 @@
+FROM python:2.7
+MAINTAINER "Dmitri <dmitri.co>"
+
+RUN apt update && apt-get install -y \
+  vim
+ENV WORKDIR /workdir/current
+RUN mkdir -p $WORKDIR
+WORKDIR $WORKDIR
+
+COPY . $WORKDIR
